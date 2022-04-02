@@ -17,7 +17,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
       <label>Email</label>
       <input
         type="email"
@@ -37,7 +37,7 @@ export const LoginForm = () => {
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
         })}
       />
-      <button>Login</button>
+      <button className="botonSubmit">Login</button>
     </form>
   );
 };

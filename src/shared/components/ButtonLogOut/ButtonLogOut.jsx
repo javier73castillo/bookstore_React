@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { JwtContext } from '../../contexts/JwtContext';
 
-export const ButtonLogout = () => {
+export const ButtonLogOut = () => {
     let navigate = useNavigate();
     const {setJwt} = useContext(JwtContext);
     const logOut = () => {
