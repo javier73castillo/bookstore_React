@@ -14,10 +14,8 @@ export const RegisterForm = () => {
 
         })
     }
-           
 
-
-  return (
+return (
     <form onSubmit={handleSubmit(onSubmit)}>
         <label>Username</label>
         <input type="text" name="name" {...register('name', {required: true})}/>
