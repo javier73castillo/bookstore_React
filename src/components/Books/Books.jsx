@@ -1,11 +1,11 @@
 import axios from "axios";
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Button } from "../Button/Button";
+
 import "./_Books.scss";
 
 export const Books = () => {
   const [books, setBooks] = useState([]);
-  const [booksCart, setbooksCart] = useState([]);
 
   const urlPage = `https://library-api-rest-86hi8hunh-javier73castillo.vercel.app/api/books`;
 
@@ -46,11 +46,16 @@ export const Books = () => {
                 <h2>{book.name}</h2>
                 <h3>{book.editorial}</h3>
                 <h3>{book.year}</h3>
+                <p>
+                  Contrary to popular belief, Lorem Ipsum is not simply random
+                  text. It has roots in a piece of classical Latin literature
+                  from 45 BC, making it over 2000 years old.
+                </p>
               </div>
 
-              <button onClick={buttonData} className="cards__books--button">
+              <Button onClick={buttonData} className="cards__books--button">
                 Agregar libro al carrito
-              </button>
+              </Button>
             </div>
           );
         })}

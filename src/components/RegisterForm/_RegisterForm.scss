@@ -1,0 +1,33 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 250px;
+    margin: 5px;
+  
+    margin-top: 50px;
+    margin-bottom: 50px;
+  
+    label {
+      padding: 10px;
+      font-size: $header2;
+    }
+    input {
+      padding: 5px;
+      border-radius: 6px;
+      text-align: center;
+    }
+  }
+  .botonSubmit {
+      margin: 30px;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      background-color: #f9bc60;
+      color: #001e1d;
+      font-style: bold;
+      font-size: $header2;
+      border-radius: 10px;
+      border: 3px groove black;
+  }

@@ -47,7 +47,7 @@ export const RegisterForm = () => {
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
         })}
       />
-      <button>Register</button>
+      <button className="botonSubmit">Register</button>
     </form>
   );
 };
