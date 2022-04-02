@@ -3,6 +3,6 @@ import { LoginForm } from '../../components/LoginForm/LoginForm'
 
 export const LoginPage = () => {
   return (
-    <div><LoginForm/></div>
+    <div className='divForm'><LoginForm className="divForm"/></div>
   )
 }
