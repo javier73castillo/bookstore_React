@@ -23,6 +23,7 @@ function App() {
       <div className="App">
         <Router>
           <nav className="nav">
+          <img src="./assets/logo.png" alt=""/>
             {jwt && <NavLink to="/">Home</NavLink>}
             {!jwt && (
               <>
