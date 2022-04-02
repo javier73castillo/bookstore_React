@@ -10,7 +10,7 @@ form {
 
   label {
     padding: 10px;
-    font-size: header2;
+    font-size: 24px;
   }
   input {
     padding: 5px;
@@ -24,4 +24,10 @@ form {
     margin-right: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
+    background-color: #f9bc60;
+    color: #001e1d;
+    font-style: bold;
+    font-size: 24px;
+    border-radius: 10px;
+    border: 3px groove black;
 }

@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
 /* Para usar la fuente
- font-family: 'Josefin Sans', sans-serif;     */
+ font-family: 'Raleway', sans-serif */
 
-
+@import "./variables";
 @import "./components/LoginForm/LoginForm.scss";
 @import "./App.scss";
 @import "./components/RegisterForm/RegisterForm.scss";
@@ -18,20 +18,3 @@
 body {
   background-color: #004643;
 }
-
-/* Variables */
-$header2: 24px;
-
-/* Paleta de colores - Light - https://www.happyhues.co/palettes/10*/
-$background: #004643;
-$headline: #fffffe;
-$paragraph: #abd1c6;
-$button: #f9bc60;
-$buttonText: #001e1d;
-
-/* Paleta de colores - Dark - Mismo enlace pero variar manuelmente */
-$darkBackground: #032b29;
-$darkHeadline: #fffffe;
-$darkParagraph: #709b8f;
-$darkButton: #a17738;
-$darkButtonText: #39b4b0;
