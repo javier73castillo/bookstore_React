@@ -5,6 +5,7 @@ import "./_Books.scss";
 
 export const Books = () => {
   const [books, setBooks] = useState([]);
+  const [booksCart, setbooksCart] = useState([]);
 
   const urlPage = `https://library-api-rest-86hi8hunh-javier73castillo.vercel.app/api/books`;
 
@@ -14,6 +15,21 @@ export const Books = () => {
       setBooks(response.data);
     });
   }, [urlPage]);
+
+  const buttonData = (e) => {
+    e.preventDefault();
+    bookSelect(e.target.parentElement);
+  };
+
+  const bookSelect = (book) => {
+    const bookInfo = {
+      image: book.querySelector("img").src,
+      title: book.querySelector("h2").textContent,
+      cant: 1,
+    };
+
+    console.log(bookInfo);
+  };
 
   return (
     <>
@@ -32,7 +48,7 @@ export const Books = () => {
                 <h3>{book.year}</h3>
               </div>
 
-              <button className="cards__books--button">
+              <button onClick={buttonData} className="cards__books--button">
                 Agregar libro al carrito
               </button>
             </div>
