@@ -1,4 +1,4 @@
-import "./App.css";
+import "./main.scss";
 import {
   BrowserRouter as Router,
   NavLink,
