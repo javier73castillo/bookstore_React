@@ -8,7 +8,7 @@ import { useBookContext } from "../../../shared/contexts/BookContext";
 export const BookDetails = () => {
   const [details, setDetails] = useState([]);
 
-  const urlPage = `https://library-api-rest-86hi8hunh-javier73castillo.vercel.app/api/books`;
+  const urlPage = `https://library-api-rest-cp6zy22th-javier73castillo.vercel.app/api/books`;
 
   const { id } = useParams();
   const { addToCart, items } = useBookContext();
@@ -20,21 +20,20 @@ export const BookDetails = () => {
     });
   }, [id]);
 
-  const { name, editorial, year, img, _id, price } = details;
+  const { name, editorial, year, img, autor, description, price } = details;
 
   return (
-    <div className="details">
-      <img src={img} alt={name} />
-      <h1>{name}</h1>
-      <h2>{editorial}</h2>
-      <h3>{year}</h3>
-      <p>
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It
-        has roots in a piece of classical Latin literature from 45 BC, making it
-        over 2000 years old.
-      </p>
-      <span>{price}</span>
-      <Button onClick={() => addToCart(details)}>Ir Al Carrito</Button>
+    <div className="container-card">
+        <div className="details">
+          <img src={img} alt={name} />
+                  <h2>{name}</h2>
+                   <h3>{editorial}</h3>
+                    <h3>{year}</h3>
+                    <p>{description}</p>
+                    <span>{price}€</span>
+          
+          <Button onClick={() => addToCart(details)}>Ir Al Carrito</Button>
+        </div>
     </div>
   );
 };

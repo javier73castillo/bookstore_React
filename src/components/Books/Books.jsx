@@ -22,15 +22,17 @@ export const Books = () => {
               />
               <div className="cards__books--text">
                 <h2>{book.name}</h2>
-                <h3>{book.autor}</h3>
                 <h3>{book.editorial}</h3>
                 <h3>{book.year}</h3>
                 <p>{book.description}</p>
                 <span>{book.price}€</span>
               </div>
+              <Link to={`/book-details/${book._id}`}>
               <Button>
-                <Link to={`/book-details/${book._id}`}>Ir al libro</Link>
+                Ir al libro
               </Button>
+              </Link>
+              <Button>Ir Al Carrito</Button>
             </div>
           );
         })}
