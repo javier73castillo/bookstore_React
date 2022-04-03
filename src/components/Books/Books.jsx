@@ -17,22 +17,6 @@ export const Books = () => {
     });
   }, [urlPage]);
 
-  const buttonData = (e) => {
-    e.preventDefault();
-    bookSelect(e.target.parentElement);
-    console.log(e.target.parentElement);
-  };
-
-  const bookSelect = (book) => {
-    const bookInfo = {
-      image: book.querySelector("img").src,
-      title: book.querySelector("h2").textContent,
-      cant: 1,
-    };
-
-    console.log(bookInfo);
-  };
-
   return (
     <>
       <div className="cards container">

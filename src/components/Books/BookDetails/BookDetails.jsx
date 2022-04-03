@@ -6,6 +6,7 @@ import { Button } from "../../Button/Button";
 
 export const BookDetails = () => {
   const [details, setDetails] = useState([]);
+  const [items, setItems] = useState([]);
 
   const urlPage = `https://library-api-rest-86hi8hunh-javier73castillo.vercel.app/api/books`;
 
@@ -17,7 +18,39 @@ export const BookDetails = () => {
     });
   }, [id]);
 
-  const { name, editorial, year, img } = details;
+  const { name, editorial, year, img, _id, price } = details;
+
+  const addItem = (e) => {
+    e.preventDefault();
+    console.log(e.target.parentElement);
+    const item = {
+      name: name,
+      img: img,
+      id: _id,
+      price: Number(price),
+    };
+
+    addToCart(item);
+  };
+
+  const addToCart = (item) => {
+    const found = items.find((book) => book.id === item.id);
+
+    if (!found) {
+      const articulo = {
+        ...item,
+        count: 1,
+        price: item.price,
+      };
+      setItems([...items, articulo]);
+    } else {
+      found.count++;
+      found.price = item.price * found.count;
+      setItems([...items]);
+    }
+
+    console.log(items);
+  };
 
   return (
     <div className="details">
@@ -30,7 +63,8 @@ export const BookDetails = () => {
         has roots in a piece of classical Latin literature from 45 BC, making it
         over 2000 years old.
       </p>
-      <Button>Ir Al Carrito</Button>
+      <span>{price}</span>
+      <Button onClick={addItem}>Ir Al Carrito</Button>
     </div>
   );
 };
