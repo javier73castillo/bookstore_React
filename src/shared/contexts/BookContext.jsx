@@ -23,8 +23,6 @@ export default function BookProvider({ children }) {
       found.price = item.price * found.count;
       setItems([...items]);
     }
-
-    console.log(items);
   };
 
   const store = {
