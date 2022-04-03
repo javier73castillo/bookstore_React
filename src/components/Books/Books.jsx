@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "../Button/Button";
-import { BookDetails } from "./BookDetails/BookDetails";
 
 import "./_Books.scss";
 
@@ -17,6 +16,22 @@ export const Books = () => {
       console.log(response.data);
     });
   }, [urlPage]);
+
+  const buttonData = (e) => {
+    e.preventDefault();
+    bookSelect(e.target.parentElement);
+    console.log(e.target.parentElement);
+  };
+
+  const bookSelect = (book) => {
+    const bookInfo = {
+      image: book.querySelector("img").src,
+      title: book.querySelector("h2").textContent,
+      cant: 1,
+    };
+
+    console.log(bookInfo);
+  };
 
   return (
     <>

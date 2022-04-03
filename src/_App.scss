@@ -21,6 +21,43 @@
         object-fit: contain;
     }
 }
+.container-search{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 300px;
+
+}
+.searchInput{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+    height: 20px;
+
+}
+.botonSearchBook{
+    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #f9bc60;
+    color: #001e1d;
+    font-style: bold;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 3px groove black;
+}
+.container-carro{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: stretch;
+    width: 20%;
+    align-items: center;
+}
 
 .divForm {
     display: flex;
