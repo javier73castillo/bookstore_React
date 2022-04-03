@@ -17,20 +17,20 @@ export const BookDetails = () => {
     });
   }, [id]);
 
-  const { name, editorial, year, img } = details;
+  const { name, editorial, year, img, autor, description, price } = details;
 
   return (
-    <div className="details">
-      <img src={img} alt={name} />
-      <h1>{name}</h1>
-      <h2>{editorial}</h2>
-      <h3>{year}</h3>
-      <p>
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It
-        has roots in a piece of classical Latin literature from 45 BC, making it
-        over 2000 years old.
-      </p>
-      <Button>Ir Al Carrito</Button>
+    <div className="container-card">
+        <div className="details">
+          <img src={img} alt={name} />
+                  <h2>{name}</h2>
+                   <h3>{editorial}</h3>
+                    <h3>{year}</h3>
+                    <p>{description}</p>
+                    <span>{price}€</span>
+          
+          <Button>Ir Al Carrito</Button>
+        </div>
     </div>
   );
 };

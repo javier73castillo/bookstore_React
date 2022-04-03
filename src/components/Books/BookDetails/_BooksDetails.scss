@@ -1,16 +1,51 @@
-.details {
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Cinzel:wght@600&family=Yanone+Kaffeesatz:wght@300&display=swap');
+//font-family: 'Cabin Sketch', cursive;
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Cinzel:wght@600&display=swap');
+//font-family: 'Cabin Sketch', cursive;
+.container-card{
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 350px;
-    height: 550px;
-    border: 1px solid black;
-    padding: 20px;
-    background-color: white;
-}
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 40%;
+            height: 50%;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 10px;
+        }
 
 
-.details img {
-    overflow: hidden;
+        .details img {
+            overflow: hidden;
+            padding: 10px;
+            width: 400px;
+            height: 250px;
+            margin: 0 auto;
+            object-fit: contain;
+        }
+
+        h2 {
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 18px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+        }
+
+        p{
+            font-size: 16px;
+            text-align: justify;
+            margin: 20px;
+            color: rgb(18, 19, 19);
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
 }

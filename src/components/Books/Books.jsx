@@ -46,7 +46,6 @@ export const Books = () => {
               />
               <div className="cards__books--text">
                 <h2>{book.name}</h2>
-                <h3>{book.autor}</h3>
                 <h3>{book.editorial}</h3>
                 <h3>{book.year}</h3>
                 <p>{book.description}</p>
@@ -55,6 +54,7 @@ export const Books = () => {
               <Button>
                 <Link to={`/book-details/${book._id}`}>Ir al libro</Link>
               </Button>
+              <Button>Ir Al Carrito</Button>
             </div>
           );
         })}
