@@ -10,7 +10,7 @@ export const LoginForm = () => {
   const onSubmit = (formData) => {
     console.log(formData);
     API.post("login", formData).then((response) => {
-      console.log(response);
+      console.log(response.data);
       localStorage.setItem("token", response.data);
       navigate("/");
     });

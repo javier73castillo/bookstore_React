@@ -1,13 +1,26 @@
 .footerContainer{
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: $paragraph;
+    
 }
 
 .socialMedia{
     display: flex;
-    
-
-    
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+ 
 }
 .socialMedia img{
-    width: 50px;
+    width: 40px;
+    padding: 20px;
+}
+.footerInfo{
+    a{text-decoration: none;}
 }
