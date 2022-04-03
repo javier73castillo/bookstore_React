@@ -8,7 +8,7 @@ import { useBookContext } from "../../../shared/contexts/BookContext";
 export const BookDetails = () => {
   const [details, setDetails] = useState([]);
 
-  const urlPage = `https://library-api-rest-86hi8hunh-javier73castillo.vercel.app/api/books`;
+  const urlPage = `https://library-api-rest-cp6zy22th-javier73castillo.vercel.app/api/books`;
 
   const { id } = useParams();
   const { addToCart, items } = useBookContext();
