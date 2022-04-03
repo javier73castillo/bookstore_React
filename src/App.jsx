@@ -16,58 +16,62 @@ import { ButtonLogOut } from "./shared/components/ButtonLogOut/ButtonLogOut";
 import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart";
 import { BookDetails } from "./components/Books/BookDetails/BookDetails";
 import { Footer } from "./components/Footer/Footer";
+import BookProvider from "./shared/contexts/BookContext";
+import { Cart } from "./pages/Cart/Cart";
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
 
   return (
-    <JwtContext.Provider value={{ jwt, setJwt }}>
-      <div className="App">
-        <div className="content">
-        <Router>
-          <nav className="nav">
-            <img src="./assets/logo.png" alt="" />
+    <BookProvider>
+      <JwtContext.Provider value={{ jwt, setJwt }}>
+        <div className="App">
+          <div className="content">
+            <Router>
+              <nav className="nav">
+                <img src="./assets/logo.png" alt="" />
 
-            <div className="container-search">
-              <input className="searchInput" type="text" />
-              <button className="botonSearchBook">Search book</button>
-            </div>
-            <div className="container-carro">
-              <ul>
-                {jwt && (
-                  <li>
-                    <NavLink to="/">Home</NavLink>
-                  </li>
-                )}
-                {!jwt && (
-                  <>
-                    <li>
-                      <NavLink to="/login">Login</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/register">Register</NavLink>
-                    </li>
-                  </>
-                )}
-              </ul>
+                <div className="container-search">
+                  <input className="searchInput" type="text" />
+                  <button className="botonSearchBook">Search book</button>
+                </div>
+                <div className="container-carro">
+                  <ul>
+                    {jwt && (
+                      <li>
+                        <NavLink to="/">Home</NavLink>
+                      </li>
+                    )}
+                    {!jwt && (
+                      <>
+                        <li>
+                          <NavLink to="/login">Login</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/register">Register</NavLink>
+                        </li>
+                      </>
+                    )}
+                  </ul>
 
-              {jwt && <ButtonLogOut />}
-              {jwt && <ShoppingCart />}
-            </div>
-          </nav>
-          <Routes>
-            {/*  <Route path="/" element={<RequireAuth><HomePage/></RequireAuth>}/> */}
-            <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/book-details/:id" element={<BookDetails />} />
-          </Routes>
-          
-        </Router>
+                  {jwt && <ButtonLogOut />}
+                  {jwt && <ShoppingCart />}
+                </div>
+              </nav>
+              <Routes>
+                {/*  <Route path="/" element={<RequireAuth><HomePage/></RequireAuth>}/> */}
+                <Route path="/" element={<HomePage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/book-details/:id" element={<BookDetails />} />
+                <Route path="/cart" element={<Cart />} />
+              </Routes>
+            </Router>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </JwtContext.Provider>
+      </JwtContext.Provider>
+    </BookProvider>
   );
 }
 
