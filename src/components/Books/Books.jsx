@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Button } from "../Button/Button";
+import { BookDetails } from "./BookDetails/BookDetails";
 
 import "./_Books.scss";
 
@@ -11,25 +13,10 @@ export const Books = () => {
 
   useEffect(() => {
     axios.get(urlPage).then((response) => {
-      console.log(response);
       setBooks(response.data);
+      console.log(response.data);
     });
   }, [urlPage]);
-
-  const buttonData = (e) => {
-    e.preventDefault();
-    bookSelect(e.target.parentElement);
-  };
-
-  const bookSelect = (book) => {
-    const bookInfo = {
-      image: book.querySelector("img").src,
-      title: book.querySelector("h2").textContent,
-      cant: 1,
-    };
-
-    console.log(bookInfo);
-  };
 
   return (
     <>
@@ -44,17 +31,14 @@ export const Books = () => {
               />
               <div className="cards__books--text">
                 <h2>{book.name}</h2>
+                <h2>{book.autor}</h2>
                 <h3>{book.editorial}</h3>
                 <h3>{book.year}</h3>
-                <p>
-                  Contrary to popular belief, Lorem Ipsum is not simply random
-                  text. It has roots in a piece of classical Latin literature
-                  from 45 BC, making it over 2000 years old.
-                </p>
+                <p>{book.description}</p>
+                <span>{book.price}€</span>
               </div>
-
-              <Button onClick={buttonData} className="cards__books--button">
-                Agregar libro al carrito
+              <Button>
+                <Link to={`/book-details/${book._id}`}>Ir al libro</Link>
               </Button>
             </div>
           );

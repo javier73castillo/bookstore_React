@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import { Books } from "../../components/Books/Books";
 
 export const HomePage = () => {
   return (
-    <div>HomePage</div>
-  )
-}
+    <div>
+      <Books />
+    </div>
+  );
+};

@@ -1,10 +1,10 @@
 import "./main.scss";
 import {
+  BrowserRouter,
   BrowserRouter as Router,
   NavLink,
   Route,
   Routes,
-  useParams,
 } from "react-router-dom";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
@@ -14,8 +14,7 @@ import { JwtContext } from "./shared/contexts/JwtContext";
 import { useState } from "react";
 import { ButtonLogOut } from "./shared/components/ButtonLogOut/ButtonLogOut";
 import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart";
-import { Books } from "./components/Books/Books";
-import { Button } from "./components/Button/Button";
+import { BookDetails } from "./components/Books/BookDetails/BookDetails";
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
@@ -25,7 +24,7 @@ function App() {
       <div className="App">
         <Router>
           <nav className="nav">
-          <img src="./assets/logo.png" alt=""/>
+            <img src="./assets/logo.png" alt="" />
             {jwt && <NavLink to="/">Home</NavLink>}
             {!jwt && (
               <>
@@ -41,10 +40,9 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/book-details/:id" element={<BookDetails />} />
           </Routes>
         </Router>
-
-        <Books />
       </div>
     </JwtContext.Provider>
   );
