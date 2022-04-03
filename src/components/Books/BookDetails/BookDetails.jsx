@@ -32,7 +32,7 @@ export const BookDetails = () => {
                     <p>{description}</p>
                     <span>{price}€</span>
           
-          <Button>Ir Al Carrito</Button>
+          <Button onClick={() => addToCart(details)}>Ir Al Carrito</Button>
         </div>
     </div>
   );
