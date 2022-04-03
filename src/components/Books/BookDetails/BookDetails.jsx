@@ -3,54 +3,24 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./_BooksDetails.scss";
 import { Button } from "../../Button/Button";
+import { useBookContext } from "../../../shared/contexts/BookContext";
 
 export const BookDetails = () => {
   const [details, setDetails] = useState([]);
-  const [items, setItems] = useState([]);
 
   const urlPage = `https://library-api-rest-86hi8hunh-javier73castillo.vercel.app/api/books`;
 
   const { id } = useParams();
+  const { addToCart, items } = useBookContext();
 
   useEffect(() => {
     axios.get(urlPage).then((response) => {
       setDetails(response.data.find((product) => product._id === id));
+      console.log(response.data);
     });
   }, [id]);
 
   const { name, editorial, year, img, _id, price } = details;
-
-  const addItem = (e) => {
-    e.preventDefault();
-    console.log(e.target.parentElement);
-    const item = {
-      name: name,
-      img: img,
-      id: _id,
-      price: Number(price),
-    };
-
-    addToCart(item);
-  };
-
-  const addToCart = (item) => {
-    const found = items.find((book) => book.id === item.id);
-
-    if (!found) {
-      const articulo = {
-        ...item,
-        count: 1,
-        price: item.price,
-      };
-      setItems([...items, articulo]);
-    } else {
-      found.count++;
-      found.price = item.price * found.count;
-      setItems([...items]);
-    }
-
-    console.log(items);
-  };
 
   return (
     <div className="details">
@@ -64,7 +34,7 @@ export const BookDetails = () => {
         over 2000 years old.
       </p>
       <span>{price}</span>
-      <Button onClick={addItem}>Ir Al Carrito</Button>
+      <Button onClick={() => addToCart(details)}>Ir Al Carrito</Button>
     </div>
   );
 };
