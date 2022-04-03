@@ -23,6 +23,7 @@ function App() {
   return (
     <JwtContext.Provider value={{ jwt, setJwt }}>
       <div className="App">
+        <div className="content">
         <Router>
           <nav className="nav">
             <img src="./assets/logo.png" alt="" />
@@ -61,8 +62,10 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/book-details/:id" element={<BookDetails />} />
           </Routes>
-          <Footer />
+          
         </Router>
+        </div>
+        <Footer />
       </div>
     </JwtContext.Provider>
   );
