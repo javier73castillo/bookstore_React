@@ -14,13 +14,8 @@ import { JwtContext } from "./shared/contexts/JwtContext";
 import { useState } from "react";
 import { ButtonLogOut } from "./shared/components/ButtonLogOut/ButtonLogOut";
 import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart";
-<<<<<<< HEAD
-import { Books } from "./components/Books/Books";
-import { Button } from "./components/Button/Button";
-import Footer from "./components/Footer/Footer";
-=======
 import { BookDetails } from "./components/Books/BookDetails/BookDetails";
->>>>>>> 9c8aff1a1c3f5e05399b6a65c4b2567cd32d68b9
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
@@ -30,18 +25,6 @@ function App() {
       <div className="App">
         <Router>
           <nav className="nav">
-<<<<<<< HEAD
-          <img src="./assets/logo.png" alt=""/>
-            {jwt && <NavLink to="/">Home</NavLink>}
-            {!jwt && (
-              <>
-                <NavLink to="/login">Login</NavLink>
-                <NavLink to="/register">Register</NavLink>
-              </>
-            )}
-            {jwt && <ButtonLogOut />}
-            {jwt && <ShoppingCart />}       
-=======
             <img src="./assets/logo.png" alt="" />
 
             <div className="container-search">
@@ -70,24 +53,16 @@ function App() {
               {jwt && <ButtonLogOut />}
               {jwt && <ShoppingCart />}
             </div>
->>>>>>> 9c8aff1a1c3f5e05399b6a65c4b2567cd32d68b9
           </nav>
           <Routes>
             {/*  <Route path="/" element={<RequireAuth><HomePage/></RequireAuth>}/> */}
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-<<<<<<< HEAD
-          </Routes>  
-          <Books />
-          <Footer />
-        </Router>
-
-=======
             <Route path="/book-details/:id" element={<BookDetails />} />
           </Routes>
+          <Footer />
         </Router>
->>>>>>> 9c8aff1a1c3f5e05399b6a65c4b2567cd32d68b9
       </div>
     </JwtContext.Provider>
   );
