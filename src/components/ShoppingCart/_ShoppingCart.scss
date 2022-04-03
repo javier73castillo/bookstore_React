@@ -1,0 +1,12 @@
+.carrito {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: $button;
+    border-radius: 30px;
+    align-content: space-between;
+    justify-content: center;
+    margin: 10px;
+}

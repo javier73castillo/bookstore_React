@@ -25,16 +25,27 @@ function App() {
       <div className="App">
         <Router>
           <nav className="nav">
-          <img src="./assets/logo.png" alt=""/>
-            {jwt && <NavLink to="/">Home</NavLink>}
-            {!jwt && (
-              <>
-                <NavLink to="/login">Login</NavLink>
-                <NavLink to="/register">Register</NavLink>
-              </>
-            )}
-            {jwt && <ButtonLogOut />}
-            <ShoppingCart />
+            <img src="./assets/logo.png" alt="" />
+
+            <div className="container-search">
+              <input className="searchInput" type="text"/>
+              <button className="botonSearchBook">Search book</button>  
+            </div>
+            <div className="container-carro">
+              <ul>
+                {jwt && <li><NavLink to="/">Home</NavLink></li>}
+                {!jwt && (
+                  <>
+                    <li><NavLink to="/login">Login</NavLink></li>
+                    <li><NavLink to="/register">Register</NavLink></li>
+                  </>
+
+                )}
+              </ul>
+
+              {jwt && <ButtonLogOut />}
+              <ShoppingCart />
+              </div>
           </nav>
           <Routes>
             {/*  <Route path="/" element={<RequireAuth><HomePage/></RequireAuth>}/> */}
