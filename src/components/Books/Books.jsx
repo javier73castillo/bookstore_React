@@ -8,7 +8,7 @@ import "./_Books.scss";
 export const Books = () => {
   const [books, setBooks] = useState([]);
 
-  const urlPage = `https://library-api-rest-86hi8hunh-javier73castillo.vercel.app/api/books`;
+  const urlPage = `https://library-api-rest-cp6zy22th-javier73castillo.vercel.app/api/books`;
 
   useEffect(() => {
     axios.get(urlPage).then((response) => {
@@ -46,7 +46,7 @@ export const Books = () => {
               />
               <div className="cards__books--text">
                 <h2>{book.name}</h2>
-                <h2>{book.autor}</h2>
+                <h3>{book.autor}</h3>
                 <h3>{book.editorial}</h3>
                 <h3>{book.year}</h3>
                 <p>{book.description}</p>
