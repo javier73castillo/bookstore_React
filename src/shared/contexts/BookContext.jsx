@@ -1,4 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import axios from "axios";
 
 export const BookContext = React.createContext();
 
@@ -8,6 +9,16 @@ export const useBookContext = () => {
 
 export default function BookProvider({ children }) {
   const [items, setItems] = useState([]);
+  const [books, setBooks] = useState([]);
+
+  const urlPage = `https://library-api-rest-cp6zy22th-javier73castillo.vercel.app/api/books`;
+
+  useEffect(() => {
+    axios.get(urlPage).then((response) => {
+      setBooks(response.data);
+      console.log(response.data);
+    });
+  }, [urlPage]);
 
   const addToCart = (item) => {
     const found = items.find((book) => book._id === item._id);
@@ -28,6 +39,7 @@ export default function BookProvider({ children }) {
   const store = {
     items,
     addToCart,
+    books,
   };
 
   return <BookContext.Provider value={store}>{children}</BookContext.Provider>;

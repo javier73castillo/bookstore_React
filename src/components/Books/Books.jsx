@@ -1,21 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useBookContext } from "../../shared/contexts/BookContext";
 import { Button } from "../Button/Button";
 
 import "./_Books.scss";
 
 export const Books = () => {
-  const [books, setBooks] = useState([]);
-
-  const urlPage = `https://library-api-rest-cp6zy22th-javier73castillo.vercel.app/api/books`;
-
-  useEffect(() => {
-    axios.get(urlPage).then((response) => {
-      setBooks(response.data);
-      console.log(response.data);
-    });
-  }, [urlPage]);
+  const { books } = useBookContext();
 
   return (
     <>
