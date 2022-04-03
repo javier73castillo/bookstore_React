@@ -19,6 +19,7 @@ export const Books = () => {
   const buttonData = (e) => {
     e.preventDefault();
     bookSelect(e.target.parentElement);
+    console.log(e.target.parentElement)
   };
 
   const bookSelect = (book) => {
