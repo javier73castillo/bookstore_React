@@ -2,19 +2,18 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { API } from "../../shared/services/api";
 import { useNavigate } from "react-router-dom";
-import { JwtContext } from "../../shared/contexts/JwtContext";
-import { useContext } from "react";
+
 
 export const RegisterForm = () => {
   let navigate = useNavigate();
-  const { setJwt } = useContext(JwtContext);
+
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (formData) => {
     console.log(formData);
     API.post("register", formData).then((response) => {
       console.log(response);
-      setJwt(response.data);
+
       navigate("/login");
     });
   };
