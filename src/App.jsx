@@ -16,6 +16,7 @@ import { ButtonLogOut } from "./shared/components/ButtonLogOut/ButtonLogOut";
 import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart";
 import { Books } from "./components/Books/Books";
 import { Button } from "./components/Button/Button";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
@@ -41,10 +42,12 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-          </Routes>
+          </Routes>  
+          <Books />
+          <Footer />
         </Router>
 
-        <Books />
+      
       </div>
     </JwtContext.Provider>
   );
