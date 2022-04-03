@@ -17,6 +17,7 @@ import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart";
 import { BookDetails } from "./components/Books/BookDetails/BookDetails";
 import { Footer } from "./components/Footer/Footer";
 import BookProvider from "./shared/contexts/BookContext";
+import { Cart } from "./pages/Cart/Cart";
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
@@ -63,6 +64,7 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/book-details/:id" element={<BookDetails />} />
+                <Route path="/cart" element={<Cart />} />
               </Routes>
             </Router>
           </div>
