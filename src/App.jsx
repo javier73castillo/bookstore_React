@@ -35,7 +35,7 @@ function App() {
               </>
             )}
             {jwt && <ButtonLogOut />}
-            <ShoppingCart />
+            {jwt && <ShoppingCart />}       
           </nav>
           <Routes>
             {/*  <Route path="/" element={<RequireAuth><HomePage/></RequireAuth>}/> */}
@@ -47,7 +47,11 @@ function App() {
           <Footer />
         </Router>
 
+<<<<<<< HEAD
       
+=======
+        <Books /> 
+>>>>>>> fa07ae46f2972e29350376868aee92980c33f9f5
       </div>
     </JwtContext.Provider>
   );
