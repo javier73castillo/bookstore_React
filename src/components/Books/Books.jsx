@@ -27,9 +27,11 @@ export const Books = () => {
                 <p>{book.description}</p>
                 <span>{book.price}€</span>
               </div>
+              <Link to={`/book-details/${book._id}`}>
               <Button>
-                <Link to={`/book-details/${book._id}`}>Ir al libro</Link>
+                Ir al libro
               </Button>
+              </Link>
               <Button>Ir Al Carrito</Button>
             </div>
           );
