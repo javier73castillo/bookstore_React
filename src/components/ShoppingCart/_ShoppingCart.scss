@@ -9,10 +9,19 @@
     align-content: space-between;
     justify-content: center;
     margin: 10px;
-}
+    font-size: 50px;
 
-.price {
-    background-color: red;
-    color:white;
-    padding: 3px;
+    span {
+        position: absolute;
+        font-size: 15px;
+        margin-top: 42px;
+        margin-left: 25px;
+        padding: 7px;
+        width: auto;
+        border-radius: 100px;
+        background-color: rgba(255, 0, 0, 0.716);
+        border: 1px solid black;
+        color: white;
+        
+    }
 }
