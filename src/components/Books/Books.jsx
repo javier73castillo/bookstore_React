@@ -6,9 +6,7 @@ import { Button } from "../Button/Button";
 
 import "./_Books.scss";
 
-export const Books = () => {
-  const { books } = useBookContext();
-
+export const Books = ({ books }) => {
   return (
     <>
       <div className="cards container">
@@ -28,11 +26,8 @@ export const Books = () => {
                 <span>{book.price}€</span>
               </div>
               <Link to={`/book-details/${book._id}`}>
-              <Button>
-                Ir al libro
-              </Button>
+                <Button>Ir al libro</Button>
               </Link>
-              <Button>Ir Al Carrito</Button>
             </div>
           );
         })}

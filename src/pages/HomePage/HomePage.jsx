@@ -1,10 +1,10 @@
 import React from "react";
 import { Books } from "../../components/Books/Books";
 
-export const HomePage = () => {
+export const HomePage = ({ books }) => {
   return (
     <div>
-      <Books />
+      <Books books={books} />
     </div>
   );
 };

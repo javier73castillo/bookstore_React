@@ -4,7 +4,6 @@ import { useBookContext } from "../../shared/contexts/BookContext";
 
 export const Cart = () => {
   const { items } = useBookContext();
-  console.log(items);
   let total = 0;
   return (
     <div className="">
@@ -16,7 +15,13 @@ export const Cart = () => {
           </div>
         );
       })}
-      {(items.reduce((prev, current) => console.log(prev + current.price)), 0)}
+      <div className="bookRow">
+        <h2>Total:</h2>{" "}
+        <span>
+          {" "}
+          €{(total = items.reduce((prev, current) => prev + current.price, 0))}
+        </span>
+      </div>
       <Link to="/">
         <button>Volver al inicio</button>
       </Link>
