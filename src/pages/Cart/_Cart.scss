@@ -1,21 +1,85 @@
 .cartContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  h2 {
-    color: $headline;
-  }
+  display: flex;
+  flex-direction: row;
 
-  
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 20px;
+
+  img {
+    width: 90px;
+  }
+}
+
+.pago {
+  font-size: 20px;
+  background-color: rgba(255, 217, 0, 0.64);
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  padding: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
 .bookRow {
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 80%;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $paragraph;
+  background-color: white;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+
+  :nth-child(3) {
+    font-weight: 500;
+  }
 }
 
+.bottomCart {
+  display: flex;
+  min-width: 80%;
+  flex-wrap: wrap;
+  a {
+    min-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    button {
+      margin-top: 20px;
+    }
+  }
+  h2 {
+    color: $headline;
+  }
+  .backToHome {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.cartTotal {
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 80%;
+
+  gap: 5px;
+}
+
+/* 
 .cartContent:last-child{
     align-items: end;
     margin-right: 30px;
-}
+} */

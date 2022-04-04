@@ -12,8 +12,7 @@ export const ShoppingCart = () => {
     <>
       <Link to="/cart">
         <button className="carrito">
-          <BsCart4 />
-          <span className="price">{counter}</span>
+          <BsCart4 /> <span>{counter}</span>
         </button>
       </Link>
     </>
