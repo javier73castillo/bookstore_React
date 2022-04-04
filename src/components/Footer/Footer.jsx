@@ -5,19 +5,19 @@ export const Footer = () => {
     <div className="footerContainer">
       <div className="socialMedia">
         <img
-          src="https://cdn.worldvectorlogo.com/logos/facebook-3.svg"
+          src="./assets/icons/facebook.png"
           alt="facebook"
         />
         <img
-          src="https://cdn.worldvectorlogo.com/logos/twitter-6.svg"
+          src="./assets/icons/twitter.png"
           alt="twitter"
         />
         <img
-          src="https://cdn.worldvectorlogo.com/logos/instagram-2016-6.svg"
+          src="./assets/icons/instagram.png"
           alt="instagram"
         />
         <img
-          src="https://cdn.worldvectorlogo.com/logos/spotify-2.svg"
+          src="./assets/icons/spotify.png"
           alt="spotify"
         />
       </div>
