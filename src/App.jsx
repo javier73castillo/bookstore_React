@@ -48,7 +48,9 @@ function App() {
           <div className="content">
             <Router>
               <nav className="nav">
-                <img src="./assets/logo.png" alt="" />
+                <NavLink to="/">
+                  <img src="./assets/logo.png" alt="" />
+                </NavLink>
 
                 <div className="container-search">
                   <input
