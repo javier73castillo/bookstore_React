@@ -49,9 +49,13 @@ function App() {
           <div className="content">
             <Router>
               <nav className="nav">
+<<<<<<< HEAD
+              <NavLink to="/"><img src="./assets/logo.png" alt="" /></NavLink>
+=======
                 <NavLink to="/">
                   <img src="./assets/logo.png" alt="" />
                 </NavLink>
+>>>>>>> refs/remotes/origin/main
 
                 <div className="container-search">
                   <button className="botonSearchBook">
