@@ -11,7 +11,7 @@ export const BookDetails = () => {
   const urlPage = `https://library-api-rest-cp6zy22th-javier73castillo.vercel.app/api/books`;
 
   const { id } = useParams();
-  const { addToCart, items } = useBookContext();
+  const { addToCart } = useBookContext();
 
   useEffect(() => {
     axios.get(urlPage).then((response) => {
