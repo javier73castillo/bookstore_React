@@ -35,8 +35,11 @@ function App() {
   }, [urlPage]);
 
   const searchBook = (e) => {
-    let resultado = books.filter((libro) =>
-      libro.name.toLowerCase().trim().includes(e.target.value)
+    let resultado = books.filter(
+      (libro) =>
+        libro.name.toLowerCase().trim().includes(e.target.value) ||
+        libro.autor.toLowerCase().trim().includes(e.target.value) ||
+        libro.editorial.toLowerCase().trim().includes(e.target.value)
     );
 
     setSearch(resultado);
