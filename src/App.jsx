@@ -19,6 +19,7 @@ import { BookDetails } from "./components/Books/BookDetails/BookDetails";
 import { Footer } from "./components/Footer/Footer";
 import BookProvider from "./shared/contexts/BookContext";
 import { Cart } from "./pages/Cart/Cart";
+import { FaSearch } from "react-icons/fa";
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
@@ -53,6 +54,9 @@ function App() {
                 </NavLink>
 
                 <div className="container-search">
+                  <button className="botonSearchBook">
+                    <FaSearch />
+                  </button>
                   <input
                     className="searchInput"
                     onChange={(e) => searchBook(e)}
