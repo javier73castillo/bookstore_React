@@ -16,7 +16,6 @@ export const BookDetails = () => {
   useEffect(() => {
     axios.get(urlPage).then((response) => {
       setDetails(response.data.find((product) => product._id === id));
-      console.log(response.data);
     });
   }, [id]);
 
@@ -24,19 +23,27 @@ export const BookDetails = () => {
 
   return (
     <div className="container-card">
-      <div className="details">
-        <img src={img} alt={name} />
-        <h2>{name}</h2>
-        <h3>{editorial}</h3>
-        <h3>{year}</h3>
-        <p>{description}</p>
-        <span>{price}€</span>
+      {details.length === 0 && (
+        <div class="container-spinner">
+          <h1 class="loading">Loading..</h1>
+          <div class="spinner"></div>
+        </div>
+      )}
+      {details.length !== 0 && (
+        <div className="details">
+          <img src={img} alt={name} />
+          <h2>{name}</h2>
+          <h3>{editorial}</h3>
+          <h3>{year}</h3>
+          <p>{description}</p>
+          <span>{price}€</span>
 
-        <Button onClick={() => addToCart(details)}>AGREGAR AL CARRITO</Button>
-        <Link to="/">
-          <Button>VOLVER AL INICIO</Button>
-        </Link>
-      </div>
+          <Button onClick={() => addToCart(details)}>AGREGAR AL CARRITO</Button>
+          <Link to="/">
+            <Button>VOLVER AL INICIO</Button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
