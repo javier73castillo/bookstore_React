@@ -40,6 +40,7 @@ export default function BookProvider({ children }) {
     items,
     addToCart,
     books,
+    setItems,
   };
 
   return <BookContext.Provider value={store}>{children}</BookContext.Provider>;

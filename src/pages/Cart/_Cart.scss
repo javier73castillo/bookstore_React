@@ -78,6 +78,13 @@
   gap: 5px;
 }
 
+.delete {
+  background-color: red;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+}
+
 /* 
 .cartContent:last-child{
     align-items: end;

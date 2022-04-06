@@ -12,7 +12,7 @@ export const LoginForm = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (formData) => {
-    console.log(formData);
+    controlForm(formData);
     API.post("login", formData).then((response) => {
       console.log(response.data);
       setJwt(response.data);
@@ -22,9 +22,7 @@ export const LoginForm = () => {
   };
 
   const controlForm = (e) => {
-    e.preventDefault(e);
-    e.target.form[0].value === "" && setValue(false);
-    e.target.form[1].value === "" && setValue(false);
+    console.log(e);
   };
 
   return (
@@ -48,11 +46,9 @@ export const LoginForm = () => {
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
         })}
       />
-      <button className="botonSubmit" onClick={controlForm}>
-        Login
-      </button>
+      <button className="botonSubmit">Login</button>
 
-      {value === false && (
+      {value !== true && (
         <h1 className="warning">Todos los campos son obligatorios</h1>
       )}
     </form>
