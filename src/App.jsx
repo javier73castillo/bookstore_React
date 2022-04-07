@@ -91,14 +91,23 @@ function App() {
                 </div>
               </nav>
               <Routes>
-                {/*  <Route path="/" element={<RequireAuth><HomePage/></RequireAuth>}/> */}
+                {/* <Route
+                  path="/"
+                  element={
+                    <RequireAuth>
+                      <HomePage />
+                    </RequireAuth>
+                  }
+                /> */}
                 <Route
                   path="/"
                   element={
-                    <HomePage
-                      books={search.length > 0 ? search : books}
-                      searchBook={searchBook}
-                    />
+                    <RequireAuth>
+                      <HomePage
+                        books={search.length > 0 ? search : books}
+                        searchBook={searchBook}
+                      />
+                    </RequireAuth>
                   }
                 />
                 <Route path="/login" element={<LoginPage />} />

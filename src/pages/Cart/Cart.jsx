@@ -10,6 +10,7 @@ export const Cart = () => {
     items.filter((itemFiltrado) => {
       if (itemFiltrado._id === libro._id && itemFiltrado.count > 0) {
         libro.count--;
+        libro.totalPrice = libro.totalPrice - libro.price;
         setItems([...items]);
       } else if (libro.count === 0) {
         let array = items.filter((item) => item._id !== libro._id);
@@ -39,7 +40,10 @@ export const Cart = () => {
       <div className="bottomCart">
         <div className="cartTotal">
           <h2>Total:</h2>{" "}
-          <h2> {items.reduce((prev, current) => prev + current.price, 0)}€</h2>
+          <h2>
+            {" "}
+            {items.reduce((prev, current) => prev + current.totalPrice, 0)}€
+          </h2>
         </div>
         <a href="https://www.paypal.com/paypalme/Keywiz">
           <button className="pago">

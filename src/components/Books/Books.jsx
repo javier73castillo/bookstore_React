@@ -1,7 +1,5 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useBookContext } from "../../shared/contexts/BookContext";
 import { Button } from "../Button/Button";
 
 import "./_Books.scss";

@@ -49,6 +49,14 @@
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
         }
 
+        .flex-buttons{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
 
         .spinner {
             border: 4px solid rgba(0, 0, 0, 0.1);
@@ -81,4 +89,13 @@
           .loading {
              color:white;
           }
+
+          .toPurchase {
+              background-color: black;
+              padding: 1rem;
+              color: white;
+              border-radius: 10px;
+          }
+
+
 }

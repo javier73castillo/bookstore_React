@@ -27,12 +27,36 @@ export default function BookProvider({ children }) {
         ...item,
         count: 1,
         price: item.price,
+        totalPrice: item.price,
       };
       setItems([...items, articulo]);
     } else {
       found.count++;
-      found.price = item.price * found.count;
+      found.totalPrice = item.price * found.count;
       setItems([...items]);
+    }
+  };
+
+  const deleteToCart = (itemToDelete) => {
+    items.filter((item) => {
+      if (item._id === itemToDelete._id) {
+        itemToDelete = {
+          ...itemToDelete,
+          count: item.count > 0 ? item.count-- : item.count,
+          totalPrice: item.totalPrice - item.price,
+        };
+
+        return itemToDelete;
+      }
+    });
+
+    //guardo las modificaciones hechas en el estado items
+    setItems([...items]);
+
+    if (itemToDelete.count === 0) {
+      let filterDeleted = items.filter((item) => item._id !== itemToDelete._id);
+      console.log(filterDeleted);
+      setItems(filterDeleted);
     }
   };
 
@@ -41,6 +65,7 @@ export default function BookProvider({ children }) {
     addToCart,
     books,
     setItems,
+    deleteToCart,
   };
 
   return <BookContext.Provider value={store}>{children}</BookContext.Provider>;
