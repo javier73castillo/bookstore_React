@@ -1,0 +1,14 @@
+ .logout {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 1.1rem;
+                font-weight: 900;
+                color: #262626;
+                border: 2px solid #e99401;
+                background-color: #e99401;
+                transition-property: background-color;
+                transition-duration: .3s;
+                padding: .5rem;
+                cursor: pointer; 
+                margin-right: 15px;
+}

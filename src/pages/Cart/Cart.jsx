@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useBookContext } from "../../shared/contexts/BookContext";
 import { RiPaypalFill } from "react-icons/ri";
@@ -12,9 +12,12 @@ export const Cart = () => {
         libro.count--;
         libro.totalPrice = libro.totalPrice - libro.price;
         setItems([...items]);
-      } else if (libro.count === 0) {
-        let array = items.filter((item) => item._id !== libro._id);
-        setItems(array);
+        console.log(libro.count);
+
+        if (libro.count === 0) {
+          let array = items.filter((item) => item._id !== libro._id);
+          setItems(array);
+        }
       }
     });
   };

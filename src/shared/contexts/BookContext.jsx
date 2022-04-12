@@ -46,18 +46,16 @@ export default function BookProvider({ children }) {
           totalPrice: item.totalPrice - item.price,
         };
 
-        return itemToDelete;
+        setItems([...items]);
+
+        if (item.count === 0) {
+          let filterDeleted = items.filter(
+            (item) => item._id !== itemToDelete._id
+          );
+          setItems(filterDeleted);
+        }
       }
     });
-
-    //guardo las modificaciones hechas en el estado items
-    setItems([...items]);
-
-    if (itemToDelete.count === 0) {
-      let filterDeleted = items.filter((item) => item._id !== itemToDelete._id);
-      console.log(filterDeleted);
-      setItems(filterDeleted);
-    }
   };
 
   const store = {

@@ -65,10 +65,10 @@ function App() {
                     onChange={(e) => searchBook(e)}
                     type="text"
                   />
-                  {/* <button className="botonSearchBook">Search book</button> */}
                 </div>
+
                 <div className="container-carro">
-                  <ul>
+                  <ul className="ul">
                     {jwt && (
                       <li>
                         <NavLink to="/">Home</NavLink>
@@ -90,15 +90,9 @@ function App() {
                   {jwt && <ShoppingCart />}
                 </div>
               </nav>
+
+              {/* Rutas establecidas en el proyecto */}
               <Routes>
-                {/* <Route
-                  path="/"
-                  element={
-                    <RequireAuth>
-                      <HomePage />
-                    </RequireAuth>
-                  }
-                /> */}
                 <Route
                   path="/"
                   element={

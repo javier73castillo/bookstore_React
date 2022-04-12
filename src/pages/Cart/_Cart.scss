@@ -32,15 +32,20 @@
   justify-content: space-around;
   min-width: 80%;
   margin: auto;
-  border: 1px solid black;
   border-radius: 10px;
+  background-color: #FFF;
+  color: #e99401;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: $paragraph;
-  background-color: white;
   font-family: "Yanone Kaffeesatz", sans-serif;
   font-size: 24px;
   font-weight: 900;
+
+  @media(max-width:768px){
+    flex-direction: column;
+    padding: 2rem;
+    border: 2px solid;
+  }
 
   :nth-child(3) {
     font-weight: 500;
@@ -61,7 +66,7 @@
     }
   }
   h2 {
-    color: $headline;
+    color: #e99401;
   }
   .backToHome {
     display: flex;
@@ -79,11 +84,18 @@
 }
 
 .delete {
-  background-color: red;
-  color: white;
+  background-color:#e99401;
+  color: #262626;
+  font-weight: 900;
   padding: 1rem;
+  border-radius: 10px;
   cursor: pointer;
 }
+.delete:hover{
+  background-color:#262626;
+  color:#e99401 ;
+}
+
 
 /* 
 .cartContent:last-child{
