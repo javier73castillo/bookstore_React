@@ -15,7 +15,7 @@
 
 .pago {
   font-size: 20px;
-  background-color: rgba(255, 217, 0, 0.64);
+  background-color: #262626;
   color: white;
   text-align: center;
   text-shadow: 2px 2px black;
@@ -34,7 +34,7 @@
   margin: auto;
   border-radius: 10px;
   background-color: #FFF;
-  color: #e99401;
+  color: #262626;
   padding-top: 10px;
   padding-bottom: 10px;
   font-family: "Yanone Kaffeesatz", sans-serif;
@@ -45,12 +45,16 @@
     flex-direction: column;
     padding: 2rem;
     border: 2px solid;
+    color: #262626;
+    font-size: 2rem;
   }
 
   :nth-child(3) {
     font-weight: 500;
   }
 }
+
+
 
 .bottomCart {
   display: flex;
@@ -77,10 +81,13 @@
 .cartTotal {
   margin: auto;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   min-width: 80%;
+ font-size: 2rem;
+ margin-top: 2rem;
 
-  gap: 5px;
+
+  
 }
 
 .delete {

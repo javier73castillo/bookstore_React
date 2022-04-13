@@ -11,7 +11,7 @@ export const LoginForm = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (formData) => {
-    API.post("login", formData).then((response) => {
+    API.post("users/login", formData).then((response) => {
       console.log(response.data);
       setJwt(response.data);
       localStorage.setItem("token", response.data);

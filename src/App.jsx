@@ -53,7 +53,11 @@ function App() {
             <Router>
               <nav className="nav">
                 <NavLink to="/">
-                  <img src="./assets/logo.png" alt="" />
+                  <img
+                    className="logo_nav"
+                    src="./assets/logo.png"
+                    alt="logo pagina principal bookstores"
+                  />
                 </NavLink>
 
                 <div className="container-search">

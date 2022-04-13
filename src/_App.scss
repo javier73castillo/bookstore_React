@@ -4,7 +4,7 @@
     width: 100%;
     justify-content: space-around;
 
-    background-image: linear-gradient(to right, rgba(199, 190, 190, 0.8), rgba(255, 255, 255, 0.4)), url(https://cdn.pixabay.com/photo/2017/09/11/15/34/animals-2739386_960_720.jpg);
+    background-image: linear-gradient(to right, rgba(199, 190, 190, 0.8), rgba(255, 255, 255, 0.4)), url(https://cdn.pixabay.com/photo/2016/07/31/16/24/banner-1559400_960_720.jpg);
     background-size: cover;
     background-position: 50%;
     padding: 5rem 0;
@@ -75,6 +75,12 @@
          align-items: center;
          justify-content: space-around;
     }
+
+    .logo_nav {
+        display: none;
+    }
+
+    
     
         }
 
@@ -146,6 +152,22 @@
     align-content: stretch;
     width: 20%;
     align-items: center;
+}
+
+@media(max-width: 768px) {
+
+    .container-search{
+        display: none;
+    }
+
+    .container-carro{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
 }
 
 .divForm {

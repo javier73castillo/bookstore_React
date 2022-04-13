@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { API } from "../../shared/services/api";
 import { useNavigate } from "react-router-dom";
 
-
 export const RegisterForm = () => {
   let navigate = useNavigate();
 
@@ -11,7 +10,7 @@ export const RegisterForm = () => {
 
   const onSubmit = (formData) => {
     console.log(formData);
-    API.post("register", formData).then((response) => {
+    API.post("users/register", formData).then((response) => {
       console.log(response);
 
       navigate("/login");

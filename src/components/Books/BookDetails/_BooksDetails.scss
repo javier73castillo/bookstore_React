@@ -101,12 +101,14 @@
         @media(min-width:768px){
             .imagen {
                 display: flex;
-                height: 700px;
+                height: 550px;
                 width: 500px;
+                
             }
         
             .imagen img {
                 width: 100%;
+                object-fit: contain;
             }
 
         }
@@ -115,6 +117,13 @@
         h2 {
             font-family: 'Yanone Kaffeesatz', sans-serif;
             font-size: 24px;
+            
+        }
+
+        @media(min-width: 768px){
+            h2 {
+                margin-top: 3rem;
+            }
         }
         h3 {
             font-size: 18px;

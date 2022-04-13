@@ -42,10 +42,9 @@ export const Cart = () => {
       </div>
       <div className="bottomCart">
         <div className="cartTotal">
-          <h2>Total:</h2>{" "}
           <h2>
-            {" "}
-            {items.reduce((prev, current) => prev + current.totalPrice, 0)}€
+            Total: {"  "}{" "}
+            {items.reduce((prev, current) => prev + current.totalPrice, 0)}€{" "}
           </h2>
         </div>
         <a href="https://www.paypal.com/paypalme/Keywiz">
