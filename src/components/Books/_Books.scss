@@ -2,57 +2,98 @@
 //font-family: 'Cabin Sketch', cursive;
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Cinzel:wght@600&display=swap');
 //font-family: 'Cabin Sketch', cursive;
-.cards {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 15px;
-    
+
+
+.listado {
+    display: grid;
+    gap: 4rem;
 }
+
+@media(min-width: 768px){
+    .listado {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 992px){
+    .listado {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 .cards__books {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 350px;
-    height: 550px;
-    border: 1px solid black;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-   
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
 
-  &--img{
-      overflow: hidden;
-      width: 300px;
-      height: 150px;
-      margin: 0 auto;
-      object-fit: contain;
-  }
-  h2{
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 24px;
-  }
-  h3{
-      font-size: 18px;
-      font-family: 'Yanone Kaffeesatz', sans-serif;
-  }
-  &--text p{
-      font-size: 12px;
-      text-align: justify;
-  }
-  span{
-      font-size: 26px;
-      color: rgb(2, 32, 84);
-      font-family: 'Cinzel', serif;
-  }
-   
-}
+    .imagen {
+        display: flex;
+        height: 450px;
+        width: 300px;
+    }
+
+    .imagen img {
+        width: 100%;
+    }
+
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 400px;
+    }
+    
+    
+    
+    /* //ESTA GENIALIDAD NOS PERMITE EDITAR LA CANTIDAD DE LINEAS Y FORMATEAR LA VISTA PREVIA EN UN DIV */
+    .descripcion {
+        display: -webkit-box;
+        /* //FORMATO VERTICAL EN QUE SE LEERA EL TEXTO */
+        -webkit-box-orient: vertical;
+        /* LA CANTIDAD DE LINEAS QUE VAMOS A MOSTRAR ANTES DE CORTARLO */
+        -webkit-line-clamp: 4;
+        /* OCULTA EL RESTO DEL TEXTO */
+        overflow: hidden;
+      }
+    
+      .precio {
+          color: #e99401;
+          font-size: 3rem;
+          font-weight: 900;
+          margin: 0;
+    
+      }
+    
+      .enlace {
+        text-decoration: none;
+        margin-top: 2rem;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: #262626;
+        border: 2px solid #e99401;
+        background-color: #e99401;
+        padding: 1rem 5rem;
+        transition-property: background-color;
+        transition-duration: .3s;
+        cursor: pointer;
+    }
+    
+    .enlace:hover{
+        background-color: #262626;
+        color: #e99401;
+    }
+
 
 .container {
     width: 95%;

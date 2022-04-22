@@ -2,35 +2,115 @@
 //font-family: 'Cabin Sketch', cursive;
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Cinzel:wght@600&display=swap');
 //font-family: 'Cabin Sketch', cursive;
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap");
+
 .container-card{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     margin-top: 10px;
+    font-family: "Outfit";
     
 
         .details {
+     
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                margin: 0 auto;
+                padding: 1rem; 
+        }
+
+        @media(min-width: 768px){
+            .details {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                margin: 0 auto;
+                padding: 5rem;
+            }
+        }
+
+        @media(max-width: 768px) {
+            p {
+                font-size: 1.5rem;
+            }
+            .details h2 {
+                font-size: 2rem;
+                
+            }
+            .details h3 {
+                font-size: 2.5rem;
+                color:#e99401;
+            }
+            h3 {
+                margin: 20px 0;
+            }
+        }
+
+        .precio {
+            font-size: 2rem;
+            color: #e99401;
+            margin: 1rem 0;
+            background-color: #262626;
+            padding: 1rem;
+            border-radius: 90px;
+        }
+        
+
+        .contenido {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            width: 40%;
-            height: 50%;
-            border: 1px solid black;
-            background-color: white;
-            border-radius: 10px;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
         }
 
+        @media(min-width:768px){
+            .contenido {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                height: 350px;
+                width: 500px;
+            }
 
-        .details img {
-            overflow: hidden;
-            padding: 10px;
-            width: 400px;
-            height: 250px;
-            margin: 0 auto;
-            object-fit: contain;
         }
+
+        .imagen {
+            display: flex;
+            height: 400px;
+            width: 250px;
+        }
+    
+        .imagen img {
+            width: 100%;
+        }
+
+        @media(min-width:768px){
+            .imagen {
+                display: flex;
+                height: 700px;
+                width: 500px;
+            }
+        
+            .imagen img {
+                width: 100%;
+            }
+
+        }
+
 
         h2 {
             font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -41,12 +121,12 @@
             font-family: 'Yanone Kaffeesatz', sans-serif;
         }
 
-        p{
-            font-size: 16px;
-            text-align: justify;
-            margin: 20px;
-            color: rgb(18, 19, 19);
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        .flex-buttons{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
         }
 
 
@@ -79,6 +159,15 @@
           }
 
           .loading {
-             color:white;
+             color:#e99401;
           }
+
+          .toPurchase {
+              background-color: black;
+              padding: 1rem;
+              color: white;
+              border-radius: 10px;
+          }
+
+
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { API } from "../../shared/services/api";
 import { useNavigate } from "react-router-dom";
@@ -6,25 +6,17 @@ import { JwtContext } from "../../shared/contexts/JwtContext";
 import { useContext } from "react";
 
 export const LoginForm = () => {
-  const [value, setValue] = useState(true);
   let navigate = useNavigate();
   const { setJwt } = useContext(JwtContext);
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (formData) => {
-    console.log(formData);
-    API.post("login", formData).then((response) => {
+    API.post("users/login", formData).then((response) => {
       console.log(response.data);
       setJwt(response.data);
       localStorage.setItem("token", response.data);
       navigate("/");
     });
-  };
-
-  const controlForm = (e) => {
-    e.preventDefault(e);
-    e.target.form[0].value === "" && setValue(false);
-    e.target.form[1].value === "" && setValue(false);
   };
 
   return (
@@ -48,13 +40,7 @@ export const LoginForm = () => {
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
         })}
       />
-      <button className="botonSubmit" onClick={controlForm}>
-        Login
-      </button>
-
-      {value === false && (
-        <h1 className="warning">Todos los campos son obligatorios</h1>
-      )}
+      <button className="botonSubmit">Login</button>
     </form>
   );
 };

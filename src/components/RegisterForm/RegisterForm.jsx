@@ -11,7 +11,7 @@ export const RegisterForm = () => {
 
   const onSubmit = (formData) => {
     console.log(formData);
-    API.post("register", formData).then((response) => {
+    API.post("users/register", formData).then((response) => {
       console.log(response);
 
       navigate("/login");

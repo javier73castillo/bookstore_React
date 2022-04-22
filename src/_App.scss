@@ -3,7 +3,11 @@
     height: 120px;
     width: 100%;
     justify-content: space-around;
-    background-color: #abd1c6;
+
+    background-image: linear-gradient(to right, rgba(199, 190, 190, 0.8), rgba(255, 255, 255, 0.4)), url(http://www.comunidadbaratz.com/wp-content/uploads/Cada-euro-invertido-en-bibliotecas-se-multiplica-por-cuatro-en-beneficios-a-la-sociedad.jpg);
+    background-size: cover;
+    background-position: 50%;
+    padding: 5rem 0;
 
     a {
         display: flex;
@@ -11,32 +15,68 @@
     
     img{
         width: 200px;
-        object-fit: contain;
-        
+        object-fit: contain;  
     }
+
     }}
 
-    ul{
+    @media(max-width: 768px) {
+
+.nav {
+    display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 1rem;
+}
+
+    }
+
+    .ul{
         display: flex;
         justify-content:right;
         flex-direction: row;
         li{
-            display: flex;
-            list-style: none;
-            padding-right: 10px;
-            padding-left: 10px;     
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 1.1rem;
+                font-weight: 900;
+                color: #e99401;
+                border: 2px solid #262626 ;
+                background-color: #262626;
+                padding: .5rem;
+                cursor: pointer; 
+                margin-right: 15px;
+                list-style: none;
+
+                
         
                  a{
-                 color: #001e1d;
+                 color: #e99401;
                  font-size: 20px;
                  text-decoration: none;
                  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                  overflow: hidden;
                  cursor: pointer;
                  
-                 }       
+                 }
+                
      }
+
+     
 }
+
+
+@media(max-width: 768px) {
+
+    ul {
+        display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-around;
+    }
+    
+        }
 
 
 .container-search{

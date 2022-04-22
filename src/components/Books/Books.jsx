@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useBookContext } from "../../shared/contexts/BookContext";
 import { Button } from "../Button/Button";
@@ -9,25 +8,24 @@ import "./_Books.scss";
 export const Books = ({ books }) => {
   return (
     <>
-      <div className="cards container">
+      <div className="listado container">
         {books.map((book) => {
           return (
             <div className="cards__books">
-              <img
-                className="cards__books--img"
-                src={book.img}
-                alt={book.name}
-              />
-              <div className="cards__books--text">
+              <div className="imagen">
+                <img src={book.img} alt={book.name} />
+              </div>
+              <div className="contenido">
                 <h2>{book.name}</h2>
                 <h3>{book.editorial}</h3>
                 <h3>{book.year}</h3>
-                <p>{book.description}</p>
-                <span>{book.price}€</span>
+                <p className="descripcion">{book.description}</p>
+                <span className="precio">{book.price}€</span>
+
+                <Link to={`/book-details/${book._id}`}>
+                  <button className="enlace">Ver articulo</button>
+                </Link>
               </div>
-              <Link to={`/book-details/${book._id}`}>
-                <Button>Ir al libro</Button>
-              </Link>
             </div>
           );
         })}
