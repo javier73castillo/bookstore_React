@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import axios from "axios";
+import { API } from "../services/api";
 
 export const BookContext = React.createContext();
 
@@ -11,19 +11,10 @@ export default function BookProvider({ children }) {
   const [items, setItems] = useState([]);
   const [books, setBooks] = useState([]);
 
-  useEffect(() => {
-    const carritoLS = JSON.parse(localStorage.getItem("carrito")) ?? [];
-    setItems(carritoLS);
-  }, []);
+  const urlPage = `https://library-api-rest.vercel.app/api/books`;
 
   useEffect(() => {
-    localStorage.setItem("carrito", JSON.stringify(items));
-  }, [items]);
-
-  const urlPage = `https://library-api-rest-cp6zy22th-javier73castillo.vercel.app/api/books`;
-
-  useEffect(() => {
-    axios.get(urlPage).then((response) => {
+    API.get("books").then((response) => {
       setBooks(response.data);
       console.log(response.data);
     });

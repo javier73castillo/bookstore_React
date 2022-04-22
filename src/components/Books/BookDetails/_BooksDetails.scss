@@ -101,6 +101,7 @@
         @media(min-width:768px){
             .imagen {
                 display: flex;
+
                 height: 550px;
                 width: 500px;
                 
@@ -108,7 +109,9 @@
         
             .imagen img {
                 width: 100%;
+
                 object-fit: contain;
+
             }
 
         }
