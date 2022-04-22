@@ -20,16 +20,18 @@ import { Footer } from "./components/Footer/Footer";
 import BookProvider from "./shared/contexts/BookContext";
 import { Cart } from "./pages/Cart/Cart";
 import { FaSearch } from "react-icons/fa";
+import {API} from "./shared/services/api" 
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
   const [search, setSearch] = useState([]);
   const [books, setBooks] = useState([]);
 
-  const urlPage = `https://library-api-rest-cp6zy22th-javier73castillo.vercel.app/api/books`;
+  const urlPage = `https://library-api-rest.vercel.app/api/`;
 
   useEffect(() => {
-    axios.get(urlPage).then((response) => {
+  
+    API.get('books').then((response) => {
       setBooks(response.data);
     });
   }, [urlPage]);
@@ -100,21 +102,12 @@ function App() {
                 <Route
                   path="/"
                   element={
-<<<<<<< HEAD
                     // <RequireAuth>
                     <HomePage
                       books={search.length > 0 ? search : books}
                       searchBook={searchBook}
                     />
                     // </RequireAuth>
-=======
-                    <RequireAuth>
-                      <HomePage
-                        books={search.length > 0 ? search : books}
-                        searchBook={searchBook}
-                      />
-                    </RequireAuth>
->>>>>>> 51a28bb8503302841cb8a5168e071843413a9078
                   }
                 />
                 <Route path="/login" element={<LoginPage />} />

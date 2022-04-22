@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import "./_BooksDetails.scss";
 import { Button } from "../../Button/Button";
 import { useBookContext } from "../../../shared/contexts/BookContext";
+import { API } from "../../../shared/services/api";
 
 export const BookDetails = () => {
   //Dependencias y funcionalidades
   const [details, setDetails] = useState([]);
-  const urlPage = `https://library-api-rest-cp6zy22th-javier73castillo.vercel.app/api/books`;
   const { id } = useParams();
   const { addToCart, deleteToCart, items } = useBookContext();
   //Variables
@@ -18,7 +17,7 @@ export const BookDetails = () => {
   //Declaro el contador que mostrara el resultado de la cantidad de articulos que hay en el carrito en tiempo real
 
   useEffect(() => {
-    axios.get(urlPage).then((response) => {
+   API.get('books').then((response) => {
       setDetails(response.data.find((product) => product._id === id));
     });
   }, [id]);
