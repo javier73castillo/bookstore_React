@@ -14,8 +14,7 @@ export default function BookProvider({ children }) {
   const urlPage = `https://library-api-rest.vercel.app/api/books`;
 
   useEffect(() => {
-    
-    API.get("books").then((response)=> {
+    API.get("books").then((response) => {
       setBooks(response.data);
       console.log(response.data);
     });
