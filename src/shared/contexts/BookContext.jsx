@@ -11,6 +11,15 @@ export default function BookProvider({ children }) {
   const [items, setItems] = useState([]);
   const [books, setBooks] = useState([]);
 
+  useEffect(() => {
+    const carritoLS = JSON.parse(localStorage.getItem("carrito")) ?? [];
+    setItems(carritoLS);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("carrito", JSON.stringify(items));
+  }, [items]);
+
   const urlPage = `https://library-api-rest-cp6zy22th-javier73castillo.vercel.app/api/books`;
 
   useEffect(() => {
