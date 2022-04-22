@@ -46,6 +46,7 @@ export const RegisterForm = () => {
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
         })}
       />
+      <p><i>*el password deberá contar con un mínimo de 8 caracteres, una letra mayúscula, una minúscula, un número y un caracter especial. </i></p>
       <button className="botonSubmit">Register</button>
     </form>
   );

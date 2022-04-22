@@ -76,9 +76,9 @@
          justify-content: space-around;
     }
 
-    .logo_nav {
-        display: none;
-    }
+    // .logo_nav {
+    //     display: none;
+    // }
 
     
     
@@ -163,9 +163,9 @@
     .container-carro{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         width: 100%;
         align-items: center;
+        justify-content: center;
     }
 
 }
